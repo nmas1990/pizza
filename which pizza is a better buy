@@ -1,0 +1,62 @@
+//9/28/2019
+//This program utilizes functions to help calculate the cost per square inch and lets us know which is a better buy. 
+#include <iostream>
+
+using namespace std;
+
+double pizza_small(double smprice);
+double pizza_medium(double mdprice);
+
+int main()
+{
+    //diameter of pizza 1, pizza 2, price 1, price 2
+    double small_price, medium_price;
+    double small, medium;
+
+    cout<< "What is the cost of the small pizza? ";
+    cin>> small_price;
+    cout<< endl;
+    cout<< "And what is the price of the medium pizza? ";
+    cin>> medium_price;
+    cout<< endl<< "The cost per square inch of the small pizza is: ";
+    small = pizza_small(small_price);
+    cout<< small;
+    cout<< endl<< "The cost per square inch of the medium pizza is: ";
+    medium = pizza_medium(medium_price);
+    cout<< medium;
+
+    cout<<endl<<endl<<"The better deal is ";
+    if (small<medium)
+    {
+        cout<<"the small pizza!";
+    }
+    else if (small>medium)
+    {
+        cout<<"the medium pizza!";
+    }
+
+
+
+    return 0;
+}
+
+double pizza_small(double smprice)
+{
+    const int small = 5;
+    double scostsq;
+    double s;
+    s = (3.14159*(small*small));
+    scostsq = smprice/s;
+    return scostsq;
+
+
+}
+double pizza_medium(double mdprice)
+{
+    const int medium = 6;
+    double mcostsq;
+    double s;
+    s = (3.14159*(medium*medium));
+    mcostsq = mdprice/s;
+    return mcostsq;
+}
