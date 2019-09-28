@@ -1,0 +1,59 @@
+//This is an improved version that allows you to choose the sizes of the pizzas
+#include <iostream>
+
+using namespace std;
+
+double pizza(double price, int diameter);
+
+int main()
+{
+    //diameter of pizza 1, pizza 2, price 1, price 2
+    int small_diameter, medium_diameter;
+    double small_price, medium_price;
+    double small, medium;
+
+    cout<< "What is the diameter (size) of the small pizza? ";
+    cin>> small_diameter;
+    cout<< endl;
+    cout<< "And what is the cost of the small pizza? $";
+    cin>> small_price;
+    cout<< endl;
+    cout<< "Next, what is the size (diameter) of the medium pizza? ";
+    cin>>medium_diameter;
+    cout<< endl;
+    cout<< "And the price of the medium pizza? $";
+    cin>> medium_price;
+    cout<< endl<< "The cost per square inch of the small pizza is: ";
+    small = pizza(small_price, small_diameter);
+    cout<< small;
+    cout<< endl<< "The cost per square inch of the medium pizza is: ";
+    medium = pizza(medium_price, medium_diameter);
+    cout<< medium;
+
+    cout<<endl<<endl<<"The better deal is ";
+    if (small<medium)
+    {
+        cout<<"the small pizza!";
+    }
+    else if (small>medium)
+    {
+        cout<<"the medium pizza!";
+    }
+
+
+
+    return 0;
+}
+
+double pizza(double price, int diameter)
+{
+    double cost_per_sqinch;
+    int radius;
+    double area;
+    radius = diameter/2;
+    area = (3.14159*(radius*radius));
+    cost_per_sqinch = price/area;
+    return cost_per_sqinch;
+
+
+}
